@@ -1,0 +1,38 @@
+import numpy
+
+# --- COLORS --- #
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+BLUE = (0, 0, 220)
+AQUA = (0, 128, 128)
+ORANGE = (255, 165, 0)
+YELLOW = (255, 255, 0)
+GRAY = (128, 128, 128)
+
+# --- GRID PARAMETERS --- #
+wCASE = 10
+hCASE = 10
+MARGIN = 1
+ROWS = 50
+COLUMNS = 50
+
+# --- WINDOW PARAMETERS --- #
+WIDTH = (wCASE + MARGIN) * ROWS
+HEIGHT = (hCASE + MARGIN) * COLUMNS
+
+# --- SIMULATION PARAMETERS --- #
+OBJECTS = 400
+NBCOLORS = 2
+SIZE_MEMORY = 10
+KP = 0.1
+KD = 0.3
+MOVEMENT = 1
+NB_AGENTS = 20
+TIME = 60
+FRAME = 2
+VISION = False
+grid = numpy.ones((ROWS, COLUMNS))
+ARRAYAGENTS = []
+
