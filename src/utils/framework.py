@@ -1,6 +1,8 @@
-from constantes import *
-import pygame
 import random
+
+import pygame
+
+from constantes import *
 
 
 # True if the given position is out of bound, false otherwise

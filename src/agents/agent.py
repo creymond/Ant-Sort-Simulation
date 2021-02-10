@@ -1,5 +1,6 @@
-from framework import *
 from threading import Thread
+
+from framework import *
 
 
 class Agent(Thread):

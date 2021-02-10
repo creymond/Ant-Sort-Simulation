@@ -1,7 +1,8 @@
+import time
+from threading import Lock
+
 from agent import Agent
 from framework import *
-from threading import Lock
-import time
 
 
 class Game:
@@ -22,22 +23,12 @@ class Game:
         pygame.display.set_caption("Ant Simulation")
 
     def gameLoop(self):
+        self.pygame_init()
         self.generateObjects(NBCOLORS)
         self.initAgents()
         self.runAgents()
 
-        # Wait for timer to finish
-        start_time = time.time()
-        while True:
-            if time.time() > start_time + TIME:
-                self.stopAgents()
-                break
-        print("--- %s seconds ---" % (time.time() - start_time))
-
         # Display window at the end
-        self.pygame_init()
-        clearAgents()
-        count = 0
         while not self.finished:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -46,11 +37,6 @@ class Game:
             self.window.fill(BLACK)
             self.drawGrid()
             refresh()
-            if count == 0:
-                pygame.image.save(self.window, "../screenshot/"
-                                  + str(NB_AGENTS) + "A_" + str(TIME)
-                                  + "s_" + str(FRAME) + "F_" + str(SIZE_MEMORY) + "M_" + str(MOVEMENT) + "MO.png")
-                count += 1
 
     def is_finished(self):
         if len(ARRAYAGENTS) == NB_AGENTS:
